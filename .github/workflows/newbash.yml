@@ -22,7 +22,6 @@ jobs:
         ls -al
         cd out/
         ls -al 
-        mkdir rename_file
         ls -al
         for i in $(find . -name "*.html" -not -name "johnny.html" -not -name "index.html" -not -name "404.html" -not -name "sitemap.html"); do echo $i | sed 's|\(.*\)/.*|\1|' | xargs -I% mkdir -p rename_file% ;mv "$i" "rename_file${i%.html}";done
         ls -al
