@@ -19,11 +19,14 @@ jobs:
       run: ls -al 
     - name: copy files
       run: |
+        ls -al
         cd out/
         mkdir rename_file
+        ls -al
         for i in $(find . -name "*.html" -not -name "johnny.html" -not -name "index.html" -not -name "404.html" -not -name "sitemap.html"); do echo $i | sed 's|\(.*\)/.*|\1|' | xargs -I% mkdir -p rename_file% ;mv "$i" "rename_file${i%.html}";done      
     - name: sync s3
       run: |
+        ls -al
         cd rename_file/
         ls -al
         pwd
