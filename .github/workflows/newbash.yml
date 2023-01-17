@@ -11,7 +11,9 @@ jobs:
     - name: Install npm & run app
       run: |
         export NODE_OPTIONS="--max_old_space_size=3072"
-        npm install --legacy-peer-deps && npm ci --legacy-peer-deps && npm run 
+        npm install --legacy-peer-deps && npm ci --legacy-peer-deps && npm run
+        ls -al
+        
     - name: remove node modules
       run: ls -al 
     - name: copy files
