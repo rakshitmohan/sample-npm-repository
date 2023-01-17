@@ -13,6 +13,7 @@ jobs:
         export NODE_OPTIONS="--max_old_space_size=3072"
         npm install --legacy-peer-deps && npm ci --legacy-peer-deps && npm run
         ls -al
+        mkdir out
         
     - name: remove node modules
       run: ls -al 
